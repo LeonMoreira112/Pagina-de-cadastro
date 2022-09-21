@@ -1,0 +1,40 @@
+@import url(keyframes.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.container {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 40%;
+    height: 40%;
+    border-radius: 5%;
+    animation-name: show;
+    animation-duration: 3s;
+    padding: 7%;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.container label {
+    display: block;
+}
+
+.container input {
+    width: 80%;
+}

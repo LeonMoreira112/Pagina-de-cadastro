@@ -1,0 +1,22 @@
+
+@keyframes show {
+    from {
+        margin-left: 100%;
+        
+      }
+    
+      to {
+        margin-left: 0%;
+      }
+}
+
+@keyframes hidden {
+     to {
+        margin-left: 100%;
+        
+      }
+    
+      from {
+        margin-left: 0%;
+      }
+}
