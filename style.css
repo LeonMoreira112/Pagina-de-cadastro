@@ -3,6 +3,27 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-secondary: rgb(0, 174, 255);
+    --line-border-fill: rgb(12, 0, 65);
+    --line-border-empty: rgb(0, 217, 255);
+
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.show {
+    display: block;
+}
+.hidden{
+    display: none;
 }
 
 body {
@@ -11,30 +32,67 @@ body {
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-
+    align-items: center;
 }
 
 
-.container {
+.containerlogin {
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
     width: 40%;
     height: 40%;
-    border-radius: 5%;
     animation-name: show;
     animation-duration: 3s;
-    padding: 7%;
 }
 
-.container h1 {
+.containerlogin h1 {
+    color: var(--color-secondary);
+    border-bottom: 1px solid white;
     text-align: center;
     margin-bottom: 10%;
 }
 
-.container label {
+.login label {
+    color: var(--color-secondary);
     display: block;
 }
 
-.container input {
-    width: 80%;
+.containerlogin input {
+    width: 100%;
+    padding: 1%;
+    border: none;
+    margin-bottom: 3%;
+}
+
+.login button {
+    color: white;
+    border: none;
+    background-color: var(--color-secondary);
+    padding: 1%;
+    width: 102%;
+    cursor: pointer;
+    margin-top: 1%;
+}
+
+
+.login {
+    padding: 7%;
+}
+
+.noacc {
+    align-items: center;
+    padding: 4%;
+    display: flex;
+    justify-content: end;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.noacc button {
+    margin-left: 5%;
+    padding: 1%;
+    cursor: pointer;
+    background-color: white;
+    color: var(--color-secondary);
+    font-weight: bold;
+    border: none;
 }

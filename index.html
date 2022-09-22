@@ -8,24 +8,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-            <h1>Login</h1>
-        <div class="inputuser">
-            <label>Digite seu nome de usuário</label>
-            <input type="text" name="user" class="inptuser">
+    <div class="containerlogin hidden">
+        <div class="login">
+                <h1>Login</h1>
+            <div class="inputemail">
+                <label>Digite seu email</label>
+                <input placeholder="example@example.com" type="email" name="email" class="inptemail">
+            </div>
+            <div class="inputsenha">
+                <label>Digite sua senha</label>
+                <input placeholder="1234" type="password" name="password" class="inptpassword">
+            </div>
+            <button>Logar</button>
         </div>
-        <div class="inputemail">
-            <label>Digite seu email</label>
-            <input type="email" name="email" class="inptemail">
-        </div>
-        <div class="inputsenha">
-            <label>Digite sua senha</label>
-            <input type="password" name="password" class="inptpassword">
-        </div>
-        <div>
-            <label>Não tem uma conta?</label>
-            <button>Registre-se</button>
+        <div class="noacc">
+            <label>Ainda não tem uma conta?</label>
+            <button>Cadastre-se</button>
         </div>
     </div>
+    <div class="containerbar">
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circe active"><i class="step1"></i></div>
+            <div class="circe active"><i class="step2"></i></div>
+            <div class="circe active"><i class="step3"></i></div>
+        </div>
+        <button class="btn" id="next">Next</button>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>
