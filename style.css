@@ -25,6 +25,9 @@ textarea:focus, input:focus, select:focus {
 .hidden{
     display: none;
 }
+.error{
+    border: 2px solid red;
+}
 
 body {
     background-image: url(https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000);
@@ -69,7 +72,7 @@ body {
     border: none;
     background-color: var(--color-secondary);
     padding: 1%;
-    width: 102%;
+    width: 100%;
     cursor: pointer;
     margin-top: 1%;
 }
@@ -84,7 +87,7 @@ body {
     padding: 4%;
     display: flex;
     justify-content: end;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .noacc button {
@@ -95,4 +98,50 @@ body {
     color: var(--color-secondary);
     font-weight: bold;
     border: none;
+}
+
+.containercadastro {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 40%;
+    height: 40%;
+    animation-name: show;
+    animation-duration: 3s;
+}
+
+.containercadastro h1 {
+    color: var(--color-secondary);
+    border-bottom: 1px solid white;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.containercadastro label {
+    color: var(--color-secondary);
+    display: block;
+}
+
+.containercadastro input {
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 3%;
+}
+
+.containercadastro button {
+    color: white;
+    border: none;
+    background-color: var(--color-secondary);
+    padding: 1%;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 3%;
+}
+
+
+.containercadastro {
+    padding: 7%;
+}
+
+#password-status {
+    
 }
