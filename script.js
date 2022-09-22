@@ -1,4 +1,3 @@
-
 const loginsection = document.querySelector('.containerlogin')
 const cadastrosection = document.querySelector('.containercadastro')
 const btncadastro = document.querySelector('.btncadastro')
@@ -16,18 +15,22 @@ btncadastro.addEventListener('click', ()=> {
     cadastrosection.classList.add('show')
 })
 
+let teste=false
+
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     let temErro = false
+    
 
     const name_input_value = name_input.value
     const data_value = data.value
     const email_inputcadastroValue = email_input_cadastro.value
-    const password_status_value = passwordstatus.innerHTML
+    
 
     if(name_input_value === '') {
         temErro = true
+        console.log("Erro no nome")
         name_input.classList.add("error")
     }else {
         temErro = false
@@ -40,10 +43,9 @@ form.addEventListener('submit', (e) => {
         temErro = false
         email_input_cadastro.classList.remove("error")
     }
-    if(password_status_value === ("<span style='color:red'>Fraco, insira no mínimo 6 caracteres</span>")) {
+    if(teste==true) {
         temErro = false
         input_senha_cadastro.classList.remove("error")
-        
     } else {
         temErro = true
         input_senha_cadastro.classList.add("error")
@@ -55,19 +57,19 @@ form.addEventListener('submit', (e) => {
 })
 
 function verificaForcaSenha() {
-	var numeros = /([0-9])/;
-	var alfabeto = /([a-zA-Z])/;
-	var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<,.])/;
+	var numeros = /([0-9])/
+	var alfabeto = /([a-zA-Z])/
+	var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<,.])/
 
-	if($('.passwordc').val().length<6) 
-	{
-		$('#password-status').html("<span style='color:red'>Fraco, insira no mínimo 6 caracteres</span>");
+	if($('.passwordc').val().length<6) {
+		$('#password-status').html("<span style='color:red'>Fraco, insira no mínimo 6 caracteres</span>")
 	} else {  	
 		if($('.passwordc').val().match(numeros) && $('.passwordc').val().match(alfabeto) && $('.passwordc').val().match(chEspeciais))
 		{            
-			$('#password-status').html("<span style='color:green'><b>Forte</b></span>");
+			$('#password-status').html("<span style='color:green'><b>Forte</b></span>")
+            teste=true
 		} else {
-			$('#password-status').html("<span style='color:orange'>Médio, insira um caracter especial</span>");
+			$('#password-status').html("<span style='color:orange'>Médio, insira um caracter especial</span>")
 		}
 	}
 }
