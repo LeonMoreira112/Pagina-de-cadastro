@@ -24,7 +24,7 @@ form.addEventListener('submit', (e) => {
     const name_input_value = name_input.value
     const data_value = data.value
     const email_inputcadastroValue = email_input_cadastro.value
-    const password_status_value = passwordstatus.html
+    const password_status_value = passwordstatus.innerHTML
 
     if(name_input_value === '') {
         temErro = true
@@ -40,9 +40,10 @@ form.addEventListener('submit', (e) => {
         temErro = false
         email_input_cadastro.classList.remove("error")
     }
-    if(password_status_value === "<span style='color:green'><b>Forte</b></span>") {
+    if(password_status_value === ("<span style='color:red'>Fraco, insira no mínimo 6 caracteres</span>")) {
         temErro = false
         input_senha_cadastro.classList.remove("error")
+        
     } else {
         temErro = true
         input_senha_cadastro.classList.add("error")
@@ -56,7 +57,7 @@ form.addEventListener('submit', (e) => {
 function verificaForcaSenha() {
 	var numeros = /([0-9])/;
 	var alfabeto = /([a-zA-Z])/;
-	var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+	var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<,.])/;
 
 	if($('.passwordc').val().length<6) 
 	{
