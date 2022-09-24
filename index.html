@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="containerlogin hidden">
+    <div class="containerlogin  hidden">
         <div class="login">
                 <h1>Login</h1>
             <div class="inputemail">
@@ -31,19 +31,19 @@
             <form class="form">
                 <div>
                     <label>Nome completo</label>
-                    <input placeholder="ex.: Jonh Ferreto Souza" type="text" name="name" class="inputname">
+                    <input placeholder="ex.: Jonh Ferreto Souza" type="text" name="name" class="inputname" required>
                 </div>
                 <div>
                     <label>Data de nascimento</label>
-                    <input placeholder="ex.: DD/MM/AA" type="text" name="data" class="inpudata">
+                    <input placeholder="ex.: DD/MM/AA" type="text" name="data" class="inpudata" required>
                 </div>
                 <div>
                     <label>Email</label>
-                    <input placeholder="ex.: example@example.com" type="email" name="mailc" class="inputmailc">
+                    <input placeholder="ex.: example@example.com" type="email" name="mailc" class="inputmailc" required>
                 </div>
                 <div>
                     <label>Senha</label>
-                    <input placeholder="ex.: 1234" type="password" name="passwordc" class="passwordc" onKeyUp="verificaForcaSenha()">
+                    <input placeholder="ex.: 1234" type="password" name="passwordc" class="passwordc" onKeyUp="verificaForcaSenha()" required>
                     <span id="password-status"></span>
                 </div>
                 <button>Confirmar</button>           

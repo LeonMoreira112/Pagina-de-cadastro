@@ -17,44 +17,6 @@ btncadastro.addEventListener('click', ()=> {
 
 let teste=false
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    let temErro = false
-    
-
-    const name_input_value = name_input.value
-    const data_value = data.value
-    const email_inputcadastroValue = email_input_cadastro.value
-    
-
-    if(name_input_value === '') {
-        temErro = true
-        console.log("Erro no nome")
-        name_input.classList.add("error")
-    }else {
-        temErro = false
-        name_input.classList.remove("error")
-    }
-    if(email_inputcadastroValue === '') {
-        temErro = true
-        email_input_cadastro.classList.add("error")
-    }else {
-        temErro = false
-        email_input_cadastro.classList.remove("error")
-    }
-    if(teste==true) {
-        temErro = false
-        input_senha_cadastro.classList.remove("error")
-    } else {
-        temErro = true
-        input_senha_cadastro.classList.add("error")
-    }
-    
-    if(!temErro) {
-        form.submit()
-    }
-})
 
 function verificaForcaSenha() {
 	var numeros = /([0-9])/
@@ -72,4 +34,36 @@ function verificaForcaSenha() {
 			$('#password-status').html("<span style='color:orange'>Médio, insira um caracter especial</span>")
 		}
 	}
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let temErro = false
+
+    if(teste==true) {
+        temErro = false
+        input_senha_cadastro.classList.remove("error")
+    } else {
+        temErro = true
+        input_senha_cadastro.classList.add("error")
+    }
+    
+    if(!temErro) {
+        form.submit()
+    }
+})
+
+
+data.addEventListener('input', setDataValue)
+
+function validadeInt(s){
+    var rgx = /^[0-9-/]*$/
+    return s.match(rgx)
+} //Validar apenas números e "/"
+
+function setDataValue() {
+    if(!validadeInt(data.value)){
+        data.value = data.value.substring(0, data.value.length-1)
+    }
 }
