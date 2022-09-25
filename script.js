@@ -6,13 +6,20 @@ const name_input = document.querySelector('.inputname')
 const data = document.querySelector('.inpudata')
 const email_input_cadastro = document.querySelector('.inputmailc')
 const input_senha_cadastro = document.querySelector('.passwordc')
-const passwordstatus = document.querySelector('#password-status')
+const btnconfirm = document.querySelector('.btnconfirm')
+const btnloguin = document.querySelector('.btnlogin')
 
 
 btncadastro.addEventListener('click', ()=> {
     loginsection.classList.add('hidden')
     cadastrosection.classList.remove('hidden')
     cadastrosection.classList.add('show')
+})
+
+btnconfirm.addEventListener('click', ()=> {
+    loginsection.classList.remove('hidden')
+    loginsection.classList.add('show')
+    cadastrosection.classList.add('hidden')
 })
 
 let teste=false
@@ -49,9 +56,9 @@ form.addEventListener('submit', (e) => {
         input_senha_cadastro.classList.add("error")
     }
     
-    if(!temErro) {
+    /* if(!temErro) {
         form.submit()
-    }
+    } */
 })
 
 
@@ -66,4 +73,18 @@ function setDataValue() {
     if(!validadeInt(data.value)){
         data.value = data.value.substring(0, data.value.length-1)
     }
+}
+
+btnconfirm.addEventListener('click', saveDataToLocalStorage)
+
+function saveDataToLocalStorage() {
+
+    const name = name_input.value
+    localStorage.setItem("Nome", name);
+
+    const email = email_input_cadastro.value
+    localStorage.setItem("Email", email);
+
+    const senha = input_senha_cadastro.value
+    localStorage.setItem("Senha", senha);
 }

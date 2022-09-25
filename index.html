@@ -19,14 +19,14 @@
                 <label>Digite sua senha</label>
                 <input placeholder="1234" type="password" name="password" class="inptpassword">
             </div>
-            <button>Logar</button>
+            <button class="btnlogin">Logar</button>
         </div>
         <div class="noacc">
             <label>Ainda não tem uma conta?</label>
             <button class="btncadastro" onclick="showcadastro()">Cadastre-se</button>
         </div>
     </div>
-    <div class="containercadastro hidden">
+    <div class="containercadastro  hidden">
         <h1>Cadastre-se</h1>
             <form class="form">
                 <div>
@@ -46,7 +46,7 @@
                     <input placeholder="ex.: 1234" type="password" name="passwordc" class="passwordc" onKeyUp="verificaForcaSenha()" required>
                     <span id="password-status"></span>
                 </div>
-                <button>Confirmar</button>           
+                <button class="btnconfirm">Confirmar</button>           
             </form>
     </div>
     <script
