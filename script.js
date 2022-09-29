@@ -7,7 +7,9 @@ const data = document.querySelector('.inpudata')
 const email_input_cadastro = document.querySelector('.inputmailc')
 const input_senha_cadastro = document.querySelector('.passwordc')
 const btnconfirm = document.querySelector('.btnconfirm')
-const btnloguin = document.querySelector('.btnlogin')
+const btnlogin = document.querySelector('.btnlogin')
+const email_login = document.querySelector('.inptemail')
+const password_login = document.querySelector('.inptpassword')
 
 
 btncadastro.addEventListener('click', ()=> {
@@ -55,10 +57,6 @@ form.addEventListener('submit', (e) => {
         temErro = true
         input_senha_cadastro.classList.add("error")
     }
-    
-    /* if(!temErro) {
-        form.submit()
-    } */
 })
 
 
@@ -79,12 +77,41 @@ btnconfirm.addEventListener('click', saveDataToLocalStorage)
 
 function saveDataToLocalStorage() {
 
-    const name = name_input.value
-    localStorage.setItem("Nome", name);
+    let cadastrados = localStorage['cadastrados'] ? JSON.parse(localStorage['cadastrados']) : []
 
-    const email = email_input_cadastro.value
-    localStorage.setItem("Email", email);
+    cadastrados.push ({
+        nome:  name_input.value,
+        emailcad: email_input_cadastro.value,
+        senhacad: input_senha_cadastro.value,
+    })
 
-    const senha = input_senha_cadastro.value
-    localStorage.setItem("Senha", senha);
+    localStorage.setItem('cadastrados', JSON.stringify(cadastrados));
+
+}
+
+
+btnlogin.addEventListener('click', confirmLogin)
+
+function confirmLogin() {
+    let cadastrados = []
+    let cadastrados_valid = {
+        email: '',
+        senha: '',
+    }
+    cadastrados = JSON.parse(localStorage.getItem('cadastrados'))
+
+    cadastrados.forEach((item) => {
+        if(email_login.value == item.emailcad && password_login.value == item.senhacad){
+            cadastrados_valid = {
+                email: item.emailcad,
+                senha: item.senhacad,
+            }
+        }
+    })
+
+        if(email_login.value == cadastrados_valid.email && password_login.value == cadastrados_valid.senha) {
+            alert('Deu certo')
+        } else {
+            alert('Deu errado')
+        }
 }
